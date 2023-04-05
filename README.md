@@ -10,6 +10,8 @@ The feedback from up to four questions can be displayed on a target.
 
 Download the release file. Create a "Database" activity in Moodle and then upload the ZIP file in the "Presets" tab under "Import".
 
+Customize the feedback questions in the list view and in the template for new entries. Do not forget to switch off the editor before!
+
 ## Language Support
 
 The preset is available in German, but there is not so much to translate. The template can easily be adapted.
