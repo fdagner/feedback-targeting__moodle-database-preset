@@ -1,0 +1,91 @@
+];
+
+var antworten = [];
+
+for (var i = 0; i < feedback.length; i++) {
+  var inneresArray = feedback[i];
+  var neuesInneresArray = [];
+
+  for (var j = 0; j < inneresArray.length; j++) {
+    switch (inneresArray[j]) {
+      case 1:
+        neuesInneresArray.push(4);
+        break;
+      case 2:
+        neuesInneresArray.push(3);
+        break;
+      case 3:
+        neuesInneresArray.push(2);
+        break;
+      case 4:
+        neuesInneresArray.push(1);
+        break;
+      default:
+       neuesInneresArray.push(99);
+        break;
+    }
+  }
+
+  antworten.push(neuesInneresArray);
+}
+
+
+		// Definiere eine Farbpalette für die Punkte
+var farbpalette = ["green", "red", "yellow", "blue"];
+
+// Bestimme den Viertel des Kreises basierend auf der Farbe des Punktes
+var viertel = {
+  "green": 1,
+  "red": 2,
+  "yellow": 3,
+  "blue": 4
+};
+
+function platzierePunkte() {
+  var zielscheibe = document.querySelector(".zielscheibe");
+
+  // Iteriere über die Antworten
+  for (var frage = 0; frage < antworten[0].length; frage++) {
+
+    // Platziere einen Punkt für jeden Teilnehmer auf der Zielscheibe
+    for (var i = 0; i < antworten.length; i++) {
+
+      // Erstelle das Punkt-Element
+      var punkt = document.createElement("div");
+      punkt.classList.add("punkt");
+
+      // Bestimme den Ring basierend auf der Antwort auf die Frage
+      var ring = antworten[i][frage];
+
+      // Bestimme den Viertel des Kreises basierend auf der Farbe des Punktes
+      var farbe = farbpalette[frage];
+      var viertelIndex = viertel[farbe];
+
+      // Bestimme den Winkel und Radius für den Punkt
+      var winkel = Math.random() * 90 + 90 * (viertelIndex - 1);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+
+      // Berechne die x- und y-Koordinaten des Punktes
+      var x = Math.cos(winkel * Math.PI / 180) * radius;
+      var y = Math.sin(winkel * Math.PI / 180) * radius;
+
+      // Platziere den Punkt auf der Zielscheibe
+      punkt.style.left = (zielscheibe.offsetWidth / 2 + x) + "px";
+      punkt.style.top = (zielscheibe.offsetHeight / 2 + y) + "px";
+
+      // Füge die Farbe des Punktes als Klasse hinzu
+      punkt.classList.add(farbe);
+
+      // Füge den Punkt zur Zielscheibe hinzu
+      zielscheibe.appendChild(punkt);
+    }
+  }
+}
+
+	platzierePunkte();
+
+
+
+
+</script>
+<br><br>

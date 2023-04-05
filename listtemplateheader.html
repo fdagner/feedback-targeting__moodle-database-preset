@@ -1,0 +1,36 @@
+<h2 style="text-align: center;font-size:3rem">🎯Feedback</h2><br><div class="parent">
+	<div class="zielscheibe">
+		<div id="ring1"></div>
+		<div id="ring2"></div>
+		<div id="ring3"></div>
+		<div id="ring4"></div>
+	</div>
+<div class="div2">Die Inhalte waren verständlich</div>
+<div class="div3">Ich kann die Inhalte in der Praxis einsetzen</div>
+<div class="div4">Ich habe etwas gelernt</div>
+<div class="div5">Die Teamarbeit hat funktioniert</div> 
+</div> 
+
+<script>
+    // Run once per session.
+    if ((typeof sessionStorage !== 'undefined') &&
+        (sessionStorage.getItem('ChangeEntriesReload') === null)) {
+
+        // Set url for 1000 entries per site.
+        const params = new URLSearchParams(location.search);
+        params.set('perpage', 1000);
+        window.history.replaceState({}, '', `${location.pathname}?${params}`);
+        // Reload page.
+        window.location.reload();
+
+        console.log('ok');
+
+        sessionStorage.setItem('ChangeEntriesReload', true);
+    }
+</script>
+
+	
+
+
+	<script>
+		var feedback = [
