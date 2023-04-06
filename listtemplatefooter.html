@@ -31,13 +31,13 @@ for (var i = 0; i < feedback.length; i++) {
 
 
 		// Definiere eine Farbpalette für die Punkte
-var farbpalette = ["green", "red", "yellow", "blue"];
+var farbpalette = ["green", "yellow", "red", "blue"];
 
 // Bestimme den Viertel des Kreises basierend auf der Farbe des Punktes
 var viertel = {
   "green": 1,
-  "red": 2,
-  "yellow": 3,
+  "yellow": 2,
+  "red": 3,
   "blue": 4
 };
 
@@ -70,8 +70,8 @@ function platzierePunkte() {
       var y = Math.sin(winkel * Math.PI / 180) * radius;
 
       // Platziere den Punkt auf der Zielscheibe
-      punkt.style.left = (zielscheibe.offsetWidth / 2 + x) + "px";
-      punkt.style.top = (zielscheibe.offsetHeight / 2 + y) + "px";
+      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 15*Math.random()) + "px";
+      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 15*Math.random()) + "px";
 
       // Füge die Farbe des Punktes als Klasse hinzu
       punkt.classList.add(farbe);
@@ -82,10 +82,43 @@ function platzierePunkte() {
   }
 }
 
+function berechneMittelwert() {
+  var mittelwerte = {};
+
+  // Iteriere über die Farben in der Farbpalette
+  for (var i = 0; i < farbpalette.length; i++) {
+    var farbe = farbpalette[i];
+    var summe = 0;
+    var anzahl = 0;
+
+    // Iteriere über die Antworten für diese Farbe
+    for (var j = 0; j < feedback.length; j++) {
+      var ring = feedback[j][viertel[farbe] - 1]; 
+
+      // Ignoriere leere Werte im Array feedback
+      if (ring !== undefined) {
+        summe += parseInt(ring);
+        anzahl++;
+      }
+    }
+
+    // Berechne den Mittelwert für diese Farbe, wenn mindestens ein Wert vorhanden ist
+    if (anzahl > 0) {
+      var mittelwert = summe / anzahl;
+      mittelwerte[farbe] = mittelwert.toFixed(1);
+    }
+  }
+  return mittelwerte;
+}
+var mittelwerte = berechneMittelwert();
+console.log(mittelwerte);
+
+// Schreibe den Mittelwert für jede Farbe in den entsprechenden Container
+document.querySelector(".green-mittelwert").textContent = mittelwerte["green"];
+document.querySelector(".red-mittelwert").textContent = mittelwerte["red"];
+document.querySelector(".yellow-mittelwert").textContent = mittelwerte["yellow"];
+document.querySelector(".blue-mittelwert").textContent = mittelwerte["blue"];
 	platzierePunkte();
-
-
-
 
 </script>
 <br><br>
