@@ -16,15 +16,19 @@ Customize the feedback questions in the list view and in the template for new en
 
 1. To switch to two questions, add the class "hidden" to questions 3 (red) and 4 (blue) in the list view header:
 
-<pre>
+```
 <div class="divlabel red hidden">lorem ipsum 3 ⌀ <span class="red-mittelwert"></span></div>
-<div class="divlabel blue hidden">lorem ipsum 4 ⌀ <span class="blue-mittelwert"></span></div> 
-</pre>
+<div class="divlabel blue hidden">lorem ipsum 4 ⌀ <span class="blue-mittelwert"></span></div>
+```
 
 2. Change the line 
-<pre>var angle = Math.random() * 90 + 90 * (quarterIndex - 1);</pre>
+```
+var angle = Math.random() * 90 + 90 * (quarterIndex - 1);
+```
 to
-<pre>var angle = Math.random() * -180 + 180 * (quarterIndex - 1);</pre>
+```
+var angle = Math.random() * -180 + 180 * (quarterIndex - 1);
+```
 
 3. Adapt the template for new entries.
 
@@ -35,3 +39,4 @@ The preset is available in German, but there is not so much to translate. The te
 ## Screenshots
 
 <img width="400" alt="list view" src="/screenshots/listenansicht.png">
+<img width="400" alt="list view" src="/screenshots/listenansicht2.png">
