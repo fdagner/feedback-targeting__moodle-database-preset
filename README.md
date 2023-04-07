@@ -12,25 +12,23 @@ Download the release file. Create a "Database" activity in Moodle and then uploa
 
 Customize the feedback questions in the list view and in the template for new entries. Do not forget to switch off the editor before!
 
-## Adjust the number of questions
+## Formulate questions and adjust number
 
-1. To switch to two questions, add the class "hidden" to questions 3 (red) and 4 (blue) in the list view header:
+1. Open the template user-defined JavaScript.
 
+2. Enter the desired number of questions, e.g. 4.
 ```
-<div class="divlabel red hidden">lorem ipsum 3 ⌀ <span class="red-mittelwert"></span></div>
-<div class="divlabel blue hidden">lorem ipsum 4 ⌀ <span class="blue-mittelwert"></span></div>
-```
-
-2. Change the line 
-```
-var angle = Math.random() * 90 + 90 * (quarterIndex - 1);
-```
-to
-```
-var angle = Math.random() * -180 + 180 * (quarterIndex - 1);
+let questionnumber = 4;
 ```
 
-3. Adapt the template for new entries.
+2. Fill in the questions, mind the inverted commas! 
+```
+let question1 = "Die Teamarbeit war erfolgreich";
+let question2 = "Ich habe etwas gelernt";
+let question3 = "Die Inhalte waren verständlich";
+let question4 = "Ich kann das Thema in der Praxis einsetzen";
+```
+3. Save and **delete the browser cache,** e.g. in Windows: strg+F5.
 
 ## Language Support
 
