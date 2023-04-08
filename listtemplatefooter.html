@@ -9,16 +9,16 @@ for (var i = 0; i < feedback.length; i++) {
   for (var j = 0; j < inneresArray.length; j++) {
     switch (inneresArray[j]) {
       case 1:
-        neuesInneresArray.push(4);
+        neuesInneresArray.push(3.5);
         break;
       case 2:
-        neuesInneresArray.push(3);
+        neuesInneresArray.push(2.5);
         break;
       case 3:
-        neuesInneresArray.push(2);
+        neuesInneresArray.push(1.5);
         break;
       case 4:
-        neuesInneresArray.push(1);
+        neuesInneresArray.push(0.5);
         break;
       default:
        neuesInneresArray.push(99);
@@ -65,27 +65,29 @@ switch(questionnumber) {
 case 1:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * 270 + 270 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
 break;
 case 2:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * -180 + 180 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
 break;
 case 3:
       // Bestimme den Winkel und Radius für den Punkt
-      var winkel = Math.random() * 105 + 105 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var winkel = Math.random() * 90 + 90 * (viertelIndex - 1);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
 break;
 case 4:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * 90 + 90 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring/4);
+
 break;
    default:
-      // Bestimme den Winkel und Radius für den Punkt
+      // Bestimme den Winkel und Radius für den Punkt)
       var winkel = Math.random() * 270 + 270 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
+
 break;
 }
       // Berechne die x- und y-Koordinaten des Punktes
@@ -93,8 +95,8 @@ break;
       var y = Math.sin(winkel * Math.PI / 180) * radius;
 
       // Platziere den Punkt auf der Zielscheibe
-      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 15*Math.random()) + "px";
-      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 15*Math.random()) + "px";
+      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 20*Math.random()+20*Math.random()) + "px";
+      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 20*Math.random()+20*Math.random()) + "px";
 
       // Füge die Farbe des Punktes als Klasse hinzu
       punkt.classList.add(farbe);

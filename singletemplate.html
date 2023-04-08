@@ -1,6 +1,6 @@
 ##edit## ##delete##
-<div class="parent"><p style="text-align: center;font-size:42px;color:white">🎯Danke für dein Feedback!</p>
-<div class="zielscheibe">
+<div class="parent"><p style="text-align: center;font-size:42px;color:white">🎯Danke für dein Feedback!</p><span id="nachladenHinweis" style="display: none;text-align: center;color: pink"></span>
+<div class="zielscheibe" id="zielscheibe">
   <div id="ring1"></div>
   <div id="ring2"></div>
   <div id="ring3"></div>
@@ -24,16 +24,16 @@ for (var i = 0; i < feedback.length; i++) {
   for (var j = 0; j < inneresArray.length; j++) {
     switch (inneresArray[j]) {
       case 1:
-        neuesInneresArray.push(4);
+        neuesInneresArray.push(3.5);
         break;
       case 2:
-        neuesInneresArray.push(3);
+        neuesInneresArray.push(2.5);
         break;
       case 3:
-        neuesInneresArray.push(2);
+        neuesInneresArray.push(1.5);
         break;
       case 4:
-        neuesInneresArray.push(1);
+        neuesInneresArray.push(0.5);
         break;
       default:
        neuesInneresArray.push(99);
@@ -77,8 +77,8 @@ function platzierePunkte() {
       var viertelIndex = viertel[farbe];
 
       // Bestimme den Winkel und Radius für den Punkt
-      var winkel = Math.random() * 90 + 90 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 5);
+      var winkel = Math.random() * 270 + 270 * (viertelIndex - 1);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
 
       // Berechne die x- und y-Koordinaten des Punktes
       var x = Math.cos(winkel * Math.PI / 180) * radius;
