@@ -52,4 +52,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       break;
   }
+    hideReloadHint();
 });
+
+
+function showReloadHint() {
+  var nachladenHinweisElement = document.getElementById("nachladenHinweis");
+  nachladenHinweisElement.style.display = "block";
+let zielscheibeElement = document.getElementById("zielscheibe");
+zielscheibeElement.style.visibility = "hidden";
+}
+
+function hideReloadHint() {
+  var nachladenHinweisElement = document.getElementById("nachladenHinweis");
+  nachladenHinweisElement.style.display = "none";
+let zielscheibeElement = document.getElementById("zielscheibe");
+zielscheibeElement.style.visibility = "visible";
+}
+
+function reloadPage() {
+  showReloadHint();
+  setTimeout(function() {
+location.reload()
+  }, 1000); // 1 Sekunden Wartezeit, um den Hinweis anzuzeigen
+}
+
+// Fügen Sie den Event Listener hinzu, um die Funktion aufzurufen, wenn die Fenstergröße geändert wird
+window.addEventListener("resize", reloadPage);
