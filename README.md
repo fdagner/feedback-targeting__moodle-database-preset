@@ -11,7 +11,7 @@ The feedback from up to four questions can be displayed on a target.
 Download the [release file](https://github.com/fdagner/feedback-targeting__moodle-database-preset/releases). 
 Create a "Database" activity in Moodle and then upload the ZIP file.
 
-## Formulate questions and adjust number
+## Add questions and adjust number
 
 1. Open the template user-defined JavaScript.
 
@@ -20,14 +20,14 @@ Create a "Database" activity in Moodle and then upload the ZIP file.
 let questionnumber = 4;
 ```
 
-2. Fill in the questions, mind the inverted commas! 
+3. Fill in the questions, mind the inverted commas! 
 ```
 let question1 = "Die Teamarbeit war erfolgreich";
 let question2 = "Ich habe etwas gelernt";
 let question3 = "Die Inhalte waren verständlich";
 let question4 = "Ich kann das Thema in der Praxis einsetzen";
 ```
-3. Save and **delete the browser cache,** e.g. in Windows: strg+F5.
+4. Save and **delete the browser cache,** e.g. in Windows: strg+F5.
 
 ## Language Support
 
