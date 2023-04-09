@@ -1,7 +1,6 @@
 ];
 
 var antworten = [];
-
 for (var i = 0; i < feedback.length; i++) {
   var inneresArray = feedback[i];
   var neuesInneresArray = [];
@@ -29,7 +28,8 @@ for (var i = 0; i < feedback.length; i++) {
   antworten.push(neuesInneresArray);
 }
 
-
+var counterDiv = document.getElementById("counter");
+ counterDiv.innerHTML = antworten.length;
 		// Definiere eine Farbpalette für die Punkte
 var farbpalette = ["green", "yellow", "red", "blue"];
 
@@ -95,8 +95,8 @@ break;
       var y = Math.sin(winkel * Math.PI / 180) * radius;
 
       // Platziere den Punkt auf der Zielscheibe
-      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 20*Math.random()+20*Math.random()) + "px";
-      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 20*Math.random()+20*Math.random()) + "px";
+      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 20*Math.random()+10*Math.random()) + "px";
+      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 20*Math.random()+10*Math.random()) + "px";
 
       // Füge die Farbe des Punktes als Klasse hinzu
       punkt.classList.add(farbe);
@@ -144,6 +144,8 @@ document.querySelector(".red-mittelwert").textContent = mittelwerte["red"];
 document.querySelector(".yellow-mittelwert").textContent = mittelwerte["yellow"];
 document.querySelector(".blue-mittelwert").textContent = mittelwerte["blue"];
 	platzierePunkte();
+
+
 
 </script>
 <br><br>
