@@ -8,9 +8,8 @@ The feedback from up to four questions can be displayed on a target.
 
 ## Getting started
 
-Download the [release](https://github.com/fdagner/feedback-targeting__moodle-database-preset/releases) file. Create a "Database" activity in Moodle and then upload the ZIP file in the "Presets" tab under "Import".
-
-Customize the feedback questions in the list view and in the template for new entries. Do not forget to switch off the editor before!
+Download the [release file](https://github.com/fdagner/feedback-targeting__moodle-database-preset/releases). 
+Create a "Database" activity in Moodle and then upload the ZIP file.
 
 ## Add questions and adjust number
 
