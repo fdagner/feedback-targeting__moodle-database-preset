@@ -1,5 +1,7 @@
 // Anzahl der Fragen eintragen (min. 1, max. 4)
 let questionnumber = 4;
+// Anzahl der Ringe (min. 2, max. 10)
+let ringnumber = 4;
 //Fragen formulieren
 let question1 = "Die Teamarbeit war erfolgreich";
 let question2 = "Ich habe etwas gelernt";
@@ -7,7 +9,6 @@ let question3 = "Die Inhalte waren verständlich";
 let question4 = "Ich kann das Thema in der Praxis einsetzen";
 //Farbpunkte animieren: "yes" oder "no"
 let punkteanimation = "yes";
-
 
 // do not change anything from here on
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   element.innerHTML = question3;
   var element = document.getElementById("question4");
   element.innerHTML = question4;
-  
+
   // Find and hide elements with the corresponding classes
   switch (questionnumber) {
     case 1:
@@ -61,28 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
   var anker = document.querySelector("#parent");
   anker.scrollIntoView();
 
-  // Animation
-  if (punkteanimation != "yes") {
-  } else {
-    var punktegreen = document.querySelectorAll(".punkt.green");
-    for (var i = 0; i < punktegreen.length; i++) {
-      punktegreen[i].style.animationDelay = Math.random() * 2 + "s";
-    }
-    var punkteyellow = document.querySelectorAll(".punkt.yellow");
-    for (var i = 0; i < punkteyellow.length; i++) {
-      punkteyellow[i].style.animationDelay = 2 + Math.random() * 2 + "s";
-    }
-
-    var punktered = document.querySelectorAll(".punkt.red");
-    for (var i = 0; i < punktered.length; i++) {
-      punktered[i].style.animationDelay = 4 + Math.random() * 2 + "s";
-    }
-
-    var punkteblue = document.querySelectorAll(".punkt.blue");
-    for (var i = 0; i < punkteblue.length; i++) {
-      punkteblue[i].style.animationDelay = 6 + Math.random() * 2 + "s";
+  //Ringe erstellen
+  for (let i = 1; i <= 10; i++) {
+    const ring = document.getElementById("ring" + i);
+    if (i > ringnumber) {
+      ring.style.display = "none";
+    } else {
+      ring.style.display = "block";
     }
   }
+
+  for (let i = 1; i <= 10; i++) {
+    const ring = document.getElementById("ring" + i);
+    const size = (i * 100) / ringnumber;
+    const position = (100 - size) / 2;
+
+    ring.style.width = size + "%";
+    ring.style.height = size + "%";
+    ring.style.top = position + "%";
+    ring.style.left = position + "%";
+  }
+
+  hideReloadHint();
+  var anker = document.querySelector("#parent");
+  anker.scrollIntoView();
 });
 
 function showReloadHint() {
