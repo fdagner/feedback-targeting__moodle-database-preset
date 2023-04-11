@@ -19,15 +19,18 @@ Create a "Database" activity in Moodle and then upload the ZIP file.
 ```
 let questionnumber = 4;
 ```
-
-3. Fill in the questions, mind the inverted commas! 
+3. Enter the number of rings
+```
+let ringnumber = 4;
+```
+4. Fill in the questions, mind the inverted commas! 
 ```
 let question1 = "Die Teamarbeit war erfolgreich";
 let question2 = "Ich habe etwas gelernt";
 let question3 = "Die Inhalte waren verständlich";
 let question4 = "Ich kann das Thema in der Praxis einsetzen";
 ```
-4. Save and **delete the browser cache,** e.g. in Windows: strg+F5.
+5. Save and **delete the browser cache,** e.g. in Windows: strg+F5.
 
 ## Language Support
 
