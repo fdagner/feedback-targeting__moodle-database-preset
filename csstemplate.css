@@ -39,8 +39,7 @@
 #ring10 {
   position: absolute;
   border-radius: 50%;
-  outline: 3px solid black;
-  outline-offset: -3px;
+  box-shadow: 0 0 0 3px #000;
 }
 
 .punkt {
@@ -50,8 +49,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  outline: 1px solid #000;
-  outline-offset: -1px;
+  border: solid 1px #000;
 }
 
 .hidden {
