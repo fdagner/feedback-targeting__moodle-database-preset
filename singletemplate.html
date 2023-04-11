@@ -121,18 +121,8 @@
         var y = Math.sin((winkel * Math.PI) / 180) * radius;
 
         // Platziere den Punkt auf der Zielscheibe
-        punkt.style.left =
-          zielscheibe.offsetWidth / 2 +
-          x -
-          10 * Math.random() +
-          5 * Math.random() +
-          "px";
-        punkt.style.top =
-          zielscheibe.offsetHeight / 2 +
-          y -
-          10 * Math.random() +
-          5 * Math.random() +
-          "px";
+        punkt.style.left = zielscheibe.offsetWidth / 2 + x + "px";
+        punkt.style.top = zielscheibe.offsetHeight / 2 + y + "px";
 
         // Füge die Farbe des Punktes als Klasse hinzu
         punkt.classList.add(farbe);
