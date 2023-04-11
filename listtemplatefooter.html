@@ -1,31 +1,23 @@
 ];
-
+console.log(feedback);
 var antworten = [];
+
 for (var i = 0; i < feedback.length; i++) {
   var inneresArray = feedback[i];
   var neuesInneresArray = [];
 
   for (var j = 0; j < inneresArray.length; j++) {
-    switch (inneresArray[j]) {
-      case 1:
-        neuesInneresArray.push(3.5);
-        break;
-      case 2:
-        neuesInneresArray.push(2.5);
-        break;
-      case 3:
-        neuesInneresArray.push(1.5);
-        break;
-      case 4:
-        neuesInneresArray.push(0.5);
-        break;
-      default:
-       neuesInneresArray.push(99);
-        break;
+    var zahl = inneresArray[j];
+    if (zahl && !isNaN(zahl)) {
+      const reversed = ringnumber + 1 - zahl - 0.5;
+      neuesInneresArray.push(reversed);
+    } else {
+      neuesInneresArray.push(99);
     }
   }
 
   antworten.push(neuesInneresArray);
+console.log(neuesInneresArray)
 }
 
 var counterDiv = document.getElementById("counter");
@@ -65,28 +57,28 @@ switch(questionnumber) {
 case 1:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * 270 + 270 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / ringnumber);
 break;
 case 2:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * -180 + 180 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / ringnumber);
 break;
 case 3:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * 120 + 120 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / ringnumber);
 break;
 case 4:
       // Bestimme den Winkel und Radius für den Punkt
       var winkel = Math.random() * 90 + 90 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring/4);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring/ringnumber);
 
 break;
    default:
       // Bestimme den Winkel und Radius für den Punkt)
       var winkel = Math.random() * 270 + 270 * (viertelIndex - 1);
-      var radius = (zielscheibe.offsetWidth / 2) * (ring / 4);
+      var radius = (zielscheibe.offsetWidth / 2) * (ring / ringnumber);
 
 break;
 }
@@ -95,8 +87,8 @@ break;
       var y = Math.sin(winkel * Math.PI / 180) * radius;
 
       // Platziere den Punkt auf der Zielscheibe
-      punkt.style.left = (zielscheibe.offsetWidth / 2 + x - 20*Math.random()+10*Math.random()) + "px";
-      punkt.style.top = (zielscheibe.offsetHeight / 2 + y - 20*Math.random()+10*Math.random()) + "px";
+      punkt.style.left = zielscheibe.offsetWidth / 2 + x - (10-ringnumber)*Math.random() +(10-ringnumber)*Math.random() + "px";
+      punkt.style.top = zielscheibe.offsetHeight / 2 + y - (10-ringnumber)*Math.random() +(10-ringnumber)*Math.random() + "px";
 
       // Füge die Farbe des Punktes als Klasse hinzu
       punkt.classList.add(farbe);
@@ -143,9 +135,32 @@ document.querySelector(".green-mittelwert").textContent = mittelwerte["green"];
 document.querySelector(".red-mittelwert").textContent = mittelwerte["red"];
 document.querySelector(".yellow-mittelwert").textContent = mittelwerte["yellow"];
 document.querySelector(".blue-mittelwert").textContent = mittelwerte["blue"];
+
+
 	platzierePunkte();
 
+// Animation
+  if (punkteanimation != "yes") {
+  } else {
+    var punktegreen = document.querySelectorAll(".punkt.green");
+    for (var i = 0; i < punktegreen.length; i++) {
+      punktegreen[i].style.animationDelay = Math.random() * 1 + "s";
+    }
+    var punkteyellow = document.querySelectorAll(".punkt.yellow");
+    for (var i = 0; i < punkteyellow.length; i++) {
+      punkteyellow[i].style.animationDelay = 2 + Math.random() * 1 + "s";
+    }
 
+    var punktered = document.querySelectorAll(".punkt.red");
+    for (var i = 0; i < punktered.length; i++) {
+      punktered[i].style.animationDelay = 3 + Math.random() * 1 + "s";
+    }
+
+    var punkteblue = document.querySelectorAll(".punkt.blue");
+    for (var i = 0; i < punkteblue.length; i++) {
+      punkteblue[i].style.animationDelay = 4 + Math.random() * 1 + "s";
+    }
+  }
 
 </script>
 <br><br>
