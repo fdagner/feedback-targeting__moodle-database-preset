@@ -38,5 +38,5 @@ The preset is available in German, but there is not so much to translate. The te
 
 ## Screenshots
 
-<img width="400" alt="list view" src="/screenshots/listenansicht.png">
-<img width="400" alt="list view" src="/screenshots/listenansicht2.png">
+<img width="400" alt="list view" src="/screenshots/listenansichtb.png">
+<img width="400" alt="list view" src="/screenshots/listenansicht2b.png">
