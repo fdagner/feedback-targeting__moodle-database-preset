@@ -3,8 +3,8 @@ let questionnumber = 4;
 // Anzahl der Ringe (min. 2, max. 10)
 let ringnumber = 4;
 //Fragen formulieren
-let question1 = "Die Teamarbeit war erfolgreich";
-let question2 = "Ich habe etwas gelernt";
+let question1 = "Ich habe etwas gelernt";
+let question2 = "Die Teamarbeit war erfolgreich";
 let question3 = "Die Inhalte waren verständlich";
 let question4 = "Ich kann das Thema in der Praxis einsetzen";
 //Farbpunkte animieren: "yes" oder "no"
