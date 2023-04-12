@@ -174,7 +174,14 @@ width: 100%;display: flex;color: gray;">-</div></div>
   }
   var mittelwerte = berechneMittelwert();
   console.log(mittelwerte);
-
+// Zielscheibe beschriften
+for (let i = 1; i <= 10; i++) {
+  let ring = ringnumber - i + 1;
+  let contents = document.querySelectorAll(".content" + i);
+  contents.forEach((content) => {
+    content.textContent = ring;
+  });
+}
   platzierePunkte();
 </script>
 <br /><br />
