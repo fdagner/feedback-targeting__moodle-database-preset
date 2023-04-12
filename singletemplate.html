@@ -8,18 +8,19 @@
     style="display: none; text-align: center; color: pink"
     >Die Punkte werden neu generiert, bitte warten...</span
   >
-  <div class="zielscheibe" id="zielscheibe">
-    <div id="ring1"></div>
-    <div id="ring2"></div>
-    <div id="ring3"></div>
-    <div id="ring4"></div>
-    <div id="ring5"></div>
-    <div id="ring6"></div>
-    <div id="ring7"></div>
-    <div id="ring8"></div>
-    <div id="ring9"></div>
-    <div id="ring10"></div>
-  </div>
+<div class="zielscheibe" id="zielscheibe">
+		<div id="ring1"><div style="justify-content: center;align-items: center;height: 100%;
+width: 100%;display: flex;color: gray;">1</div></div>
+		<div id="ring2"><div class="oben">2</div><div class="links">&nbsp;2</div><div class="rechts">2&nbsp;</div><div class="unten">2</div></div>
+		<div id="ring3"><div class="oben">3</div><div class="links">&nbsp;3</div><div class="rechts">3&nbsp;</div><div class="unten">3</div></div>
+		<div id="ring4"><div class="oben">4</div><div class="links">&nbsp;4</div><div class="rechts">4&nbsp;</div><div class="unten">4</div></div>
+               <div id="ring5"><div class="oben">5</div><div class="links">&nbsp;5</div><div class="rechts">5&nbsp;</div><div class="unten">5</div></div>
+               <div id="ring6"><div class="oben">6</div><div class="links">&nbsp;6</div><div class="rechts">6&nbsp;</div><div class="unten">6</div></div>
+               <div id="ring7"><div class="oben">7</div><div class="links">&nbsp;7</div><div class="rechts">7&nbsp;</div><div class="unten">7</div></div>
+                <div id="ring8"><div class="oben">8</div><div class="links">&nbsp;8</div><div class="rechts">8&nbsp;</div><div class="unten">8</div></div>
+  <div id="ring9"><div class="oben">9</div><div class="links">&nbsp;9</div><div class="rechts">9&nbsp;</div><div class="unten">9</div></div>
+  <div id="ring10"><div class="oben">10</div><div class="links">&nbsp;10</div><div class="rechts">10&nbsp;</div><div class="unten">10</div></div>
+	</div>
   <br />
   <div class="divlabel green">
     <span id="question1"></span><span class="green-mittelwert"></span>
@@ -121,8 +122,18 @@
         var y = Math.sin((winkel * Math.PI) / 180) * radius;
 
         // Platziere den Punkt auf der Zielscheibe
-        punkt.style.left = zielscheibe.offsetWidth / 2 + x + "px";
-        punkt.style.top = zielscheibe.offsetHeight / 2 + y + "px";
+        punkt.style.left =
+          zielscheibe.offsetWidth / 2 +
+          x -
+          10 * Math.random() +
+          5 * Math.random() +
+          "px";
+        punkt.style.top =
+          zielscheibe.offsetHeight / 2 +
+          y -
+          10 * Math.random() +
+          5 * Math.random() +
+          "px";
 
         // Füge die Farbe des Punktes als Klasse hinzu
         punkt.classList.add(farbe);

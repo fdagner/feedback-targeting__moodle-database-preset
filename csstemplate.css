@@ -13,6 +13,40 @@
   color: white;
 }
 
+.oben {
+position: absolute;
+top: 0;
+width: 100%;
+text-align: center;
+color: gray;
+}
+
+.unten {
+position: absolute;
+bottom: 0;
+width: 100%;
+text-align: center;
+color: gray;
+}
+
+.links {
+display: flex;
+position: absolute;
+left: 4px;
+align-items: center;
+height: 100%;
+color: gray;
+}
+
+.rechts {
+  display: flex;
+  position: absolute;
+  right: 4px;
+  height: 100%;
+  align-items: center;
+color: gray;
+}
+
 .zielscheibe * {
   box-sizing: unset;
 }

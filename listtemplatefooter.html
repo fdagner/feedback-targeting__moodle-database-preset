@@ -95,6 +95,7 @@ break;
 
       // Füge den Punkt zur Zielscheibe hinzu
       zielscheibe.appendChild(punkt);
+
     }
   }
 }
@@ -119,6 +120,7 @@ function berechneMittelwert() {
       }
     }
 
+
     // Berechne den Mittelwert für diese Farbe, wenn mindestens ein Wert vorhanden ist
     if (anzahl > 0) {
       var mittelwert = summe / anzahl;
@@ -136,6 +138,14 @@ document.querySelector(".red-mittelwert").textContent = mittelwerte["red"];
 document.querySelector(".yellow-mittelwert").textContent = mittelwerte["yellow"];
 document.querySelector(".blue-mittelwert").textContent = mittelwerte["blue"];
 
+// Zielscheibe beschriften
+for (let i = 1; i <= 10; i++) {
+  let ring = ringnumber - i + 1;
+  let contents = document.querySelectorAll(".content" + i);
+  contents.forEach((content) => {
+    content.textContent = ring;
+  });
+}
 
 	platzierePunkte();
 
@@ -148,17 +158,17 @@ document.querySelector(".blue-mittelwert").textContent = mittelwerte["blue"];
     }
     var punkteyellow = document.querySelectorAll(".punkt.yellow");
     for (var i = 0; i < punkteyellow.length; i++) {
-      punkteyellow[i].style.animationDelay = 2 + Math.random() * 1 + "s";
+      punkteyellow[i].style.animationDelay = 1 + Math.random() * 1 + "s";
     }
 
     var punktered = document.querySelectorAll(".punkt.red");
     for (var i = 0; i < punktered.length; i++) {
-      punktered[i].style.animationDelay = 3 + Math.random() * 1 + "s";
+      punktered[i].style.animationDelay = 2 + Math.random() * 1 + "s";
     }
 
     var punkteblue = document.querySelectorAll(".punkt.blue");
     for (var i = 0; i < punkteblue.length; i++) {
-      punkteblue[i].style.animationDelay = 4 + Math.random() * 1 + "s";
+      punkteblue[i].style.animationDelay = 3 + Math.random() * 1 + "s";
     }
   }
 
