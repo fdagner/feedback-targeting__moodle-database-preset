@@ -110,25 +110,25 @@
 }
 
 .green {
-  background-color: green;
+  background-color: #00796B;
   color: white;
   animation-delay: 1s;
 }
 
 .red {
-  background-color: red;
+  background-color: #D32F2F;
   color: white;
   animation-delay: 1.5s;
 }
 
 .yellow {
-  background-color: yellow;
-  color: black;
+  background-color: #F9A825; /* dunkles Goldgelb */
+  color: black; /* bleibt, da Weiß auf Gelb zu wenig Kontrast hätte */
   animation-delay: 2s;
 }
 
 .blue {
-  background-color: blue;
+  background-color: #1976D2; /* kräftiges Blau */
   color: white;
   animation-delay: 2.5s;
 }
