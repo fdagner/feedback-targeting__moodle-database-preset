@@ -33,8 +33,10 @@ var viertel = {
   "blue": 4
 };
 
-function platzierePunkte() {
+function platzierePunkte(animated = false) {
   var zielscheibe = document.querySelector(".zielscheibe");
+  const altePunkte = zielscheibe.querySelectorAll(".punkt");
+  altePunkte.forEach(p => p.remove());
 
   // Iteriere über die Antworten
   for (var frage = 0; frage < antworten[0].length; frage++) {
@@ -45,6 +47,7 @@ function platzierePunkte() {
       // Erstelle das Punkt-Element
       var punkt = document.createElement("div");
       punkt.classList.add("punkt");
+      if (animated) punkt.classList.add("animate");
 
       // Bestimme den Ring basierend auf der Antwort auf die Frage
       var ring = antworten[i][frage];
@@ -86,6 +89,8 @@ break;
       var x = Math.cos(winkel * Math.PI / 180) * radius;
       var y = Math.sin(winkel * Math.PI / 180) * radius;
 
+      
+
       // Platziere den Punkt auf der Zielscheibe
       punkt.style.left = zielscheibe.offsetWidth / 2 + x - (10-ringnumber)*Math.random() +(10-ringnumber)*Math.random() + "px";
       punkt.style.top = zielscheibe.offsetHeight / 2 + y - (10-ringnumber)*Math.random() +(10-ringnumber)*Math.random() + "px";
@@ -97,6 +102,15 @@ break;
       zielscheibe.appendChild(punkt);
 
     }
+  }
+
+  // Animation ggf. erneut setzen
+  if (animated && punkteanimation === "yes") {
+    ["green", "yellow", "red", "blue"].forEach((farbe, idx) => {
+      document.querySelectorAll(".punkt." + farbe).forEach(p => {
+        p.style.animationDelay = (idx + Math.random()) + "s";
+      });
+    });
   }
 }
 
@@ -147,8 +161,6 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-	platzierePunkte();
-
 // Animation
   if (punkteanimation != "yes") {
   } else {
@@ -171,6 +183,32 @@ for (let i = 1; i <= 10; i++) {
       punkteblue[i].style.animationDelay = 3 + Math.random() * 1 + "s";
     }
   }
+
+</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  platzierePunkte(true); // beim Laden mit Animation
+});
+
+
+let letzteBreite = window.innerWidth;
+let letzteHoehe = window.innerHeight;
+
+window.addEventListener("resize", () => {
+  clearTimeout(window.neuPlatzierenTimeout);
+  window.neuPlatzierenTimeout = setTimeout(() => {
+    const neueBreite = window.innerWidth;
+    const neueHoehe = window.innerHeight;
+
+    if (neueBreite !== letzteBreite || neueHoehe !== letzteHoehe) {
+      letzteBreite = neueBreite;
+      letzteHoehe = neueHoehe;
+      platzierePunkte(false); // ohne Animation
+    }
+  }, 200);
+});
+
 
 </script>
 <br><br>

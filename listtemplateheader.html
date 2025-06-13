@@ -1,23 +1,74 @@
-<div class="parent" id="parent"><p style="text-align: center;font-size:42px;color: white">🎯Feedback</p><div style="text-align: center;font-size:22px;color: white"><i class="fa fa-users"></i> <span id="counter"></span></div><br><span id="nachladenHinweis" style="display: none;text-align: center;color: pink">Die Punkte werden neu generiert, bitte warten...</span>
-	<div class="zielscheibe" id="zielscheibe">
-		<div id="ring1"><div class="content1" style="justify-content: center;align-items: center;height: 100%;
-width: 100%;display: flex;color: gray;">-</div></div>
-		<div id="ring2"><div class="oben content2"></div><div class="links content2"></div><div class="rechts content2">&nbsp;</div><div class="unten content2"></div></div>
-		<div id="ring3"><div class="oben content3"></div><div class="links content3"></div><div class="rechts content3"></div><div class="unten content3"></div></div>
-		<div id="ring4"><div class="oben content4"></div><div class="links content4"></div><div class="rechts content4"></div><div class="unten content4"></div></div>
-               <div id="ring5"><div class="oben content5"></div><div class="links content5"></div><div class="rechts content5"></div><div class="unten content5"></div></div>
-               <div id="ring6"><div class="oben content6"></div><div class="links content6"></div><div class="rechts content6"></div><div class="unten content6"></div></div>
-               <div id="ring7"><div class="oben content7"></div><div class="links content7"></div><div class="rechts content7"></div><div class="unten content7"></div></div>
-                <div id="ring8"><div class="oben content8"></div><div class="links content8"></div><div class="rechts content8"></div><div class="unten content8"></div></div>
-  <div id="ring9"><div class="oben content9"></div><div class="links content9"></div><div class="rechts content9">;</div><div class="unten content9"></div></div>
-  <div id="ring10"><div class="oben content10"></div><div class="links content10"></div><div class="rechts content10"></div><div class="unten content10"></div></div>
-	</div><br><br>
+<div class="parent" id="parent">
+    <p style="text-align: center;font-size:42px;color: white">🎯Feedback</p><br>
+    <div style="text-align: center;font-size:22px;color: white"><i class="fa fa-users"></i> <span id="counter"></span>
+    </div><br><span id="nachladenHinweis" style="display: none;text-align: center;color: pink">Die Punkte werden neu
+        generiert, bitte warten...</span>
+    <div class="zielscheibe" id="zielscheibe">
+        <div id="ring1">
+            <div class="content1" style="justify-content: center;align-items: center;height: 100%;
+width: 100%;display: flex;color: gray;">-</div>
+        </div>
+        <div id="ring2">
+            <div class="oben content2"></div>
+            <div class="links content2"></div>
+            <div class="rechts content2">&nbsp;</div>
+            <div class="unten content2"></div>
+        </div>
+        <div id="ring3">
+            <div class="oben content3"></div>
+            <div class="links content3"></div>
+            <div class="rechts content3"></div>
+            <div class="unten content3"></div>
+        </div>
+        <div id="ring4">
+            <div class="oben content4"></div>
+            <div class="links content4"></div>
+            <div class="rechts content4"></div>
+            <div class="unten content4"></div>
+        </div>
+        <div id="ring5">
+            <div class="oben content5"></div>
+            <div class="links content5"></div>
+            <div class="rechts content5"></div>
+            <div class="unten content5"></div>
+        </div>
+        <div id="ring6">
+            <div class="oben content6"></div>
+            <div class="links content6"></div>
+            <div class="rechts content6"></div>
+            <div class="unten content6"></div>
+        </div>
+        <div id="ring7">
+            <div class="oben content7"></div>
+            <div class="links content7"></div>
+            <div class="rechts content7"></div>
+            <div class="unten content7"></div>
+        </div>
+        <div id="ring8">
+            <div class="oben content8"></div>
+            <div class="links content8"></div>
+            <div class="rechts content8"></div>
+            <div class="unten content8"></div>
+        </div>
+        <div id="ring9">
+            <div class="oben content9"></div>
+            <div class="links content9"></div>
+            <div class="rechts content9">;</div>
+            <div class="unten content9"></div>
+        </div>
+        <div id="ring10">
+            <div class="oben content10"></div>
+            <div class="links content10"></div>
+            <div class="rechts content10"></div>
+            <div class="unten content10"></div>
+        </div>
+    </div><br><br>
 
-<div class="divlabel green"><span id="question1"></span> ⌀ <span class="green-mittelwert"></span></div>
-<div class="divlabel yellow"><span id="question2"></span>  ⌀ <span class="yellow-mittelwert"></span></div>
-<div class="divlabel red"><span id="question3"></span>  ⌀ <span class="red-mittelwert"></span></div>
-<div class="divlabel blue"><span id="question4"></span>  ⌀ <span class="blue-mittelwert"></span></div> 
-</div> 
+    <div class="divlabel green"><span id="question1"></span> ⌀ <span class="green-mittelwert"></span></div>
+    <div class="divlabel yellow"><span id="question2"></span> ⌀ <span class="yellow-mittelwert"></span></div>
+    <div class="divlabel red"><span id="question3"></span> ⌀ <span class="red-mittelwert"></span></div>
+    <div class="divlabel blue"><span id="question4"></span> ⌀ <span class="blue-mittelwert"></span></div>
+</div>
 
 <script>
     // Run once per session.
@@ -36,9 +87,5 @@ width: 100%;display: flex;color: gray;">-</div></div>
         sessionStorage.setItem('ChangeEntriesReload', true);
     }
 </script>
-
-	
-
-
-	<script>
-		var feedback = [
+<script>
+    var feedback = [

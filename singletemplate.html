@@ -3,24 +3,68 @@
   <p style="text-align: center; font-size: 42px; color: white">
     🎯Danke für dein Feedback!
   </p>
-  <span
-    id="nachladenHinweis"
-    style="display: none; text-align: center; color: pink"
-    >Die Punkte werden neu generiert, bitte warten...</span
-  >
+  <span id="nachladenHinweis" style="display: none; text-align: center; color: pink">Die Punkte werden neu generiert,
+    bitte warten...</span>
   <div class="zielscheibe" id="zielscheibe">
-		<div id="ring1"><div class="content1" style="justify-content: center;align-items: center;height: 100%;
-width: 100%;display: flex;color: gray;">-</div></div>
-		<div id="ring2"><div class="oben content2"></div><div class="links content2"></div><div class="rechts content2">&nbsp;</div><div class="unten content2"></div></div>
-		<div id="ring3"><div class="oben content3"></div><div class="links content3"></div><div class="rechts content3"></div><div class="unten content3"></div></div>
-		<div id="ring4"><div class="oben content4"></div><div class="links content4"></div><div class="rechts content4"></div><div class="unten content4"></div></div>
-               <div id="ring5"><div class="oben content5"></div><div class="links content5"></div><div class="rechts content5"></div><div class="unten content5"></div></div>
-               <div id="ring6"><div class="oben content6"></div><div class="links content6"></div><div class="rechts content6"></div><div class="unten content6"></div></div>
-               <div id="ring7"><div class="oben content7"></div><div class="links content7"></div><div class="rechts content7"></div><div class="unten content7"></div></div>
-                <div id="ring8"><div class="oben content8"></div><div class="links content8"></div><div class="rechts content8"></div><div class="unten content8"></div></div>
-  <div id="ring9"><div class="oben content9"></div><div class="links content9"></div><div class="rechts content9">;</div><div class="unten content9"></div></div>
-  <div id="ring10"><div class="oben content10"></div><div class="links content10"></div><div class="rechts content10"></div><div class="unten content10"></div></div>
-	</div>
+    <div id="ring1">
+      <div class="content1" style="justify-content: center;align-items: center;height: 100%;
+width: 100%;display: flex;color: gray;">-</div>
+    </div>
+    <div id="ring2">
+      <div class="oben content2"></div>
+      <div class="links content2"></div>
+      <div class="rechts content2">&nbsp;</div>
+      <div class="unten content2"></div>
+    </div>
+    <div id="ring3">
+      <div class="oben content3"></div>
+      <div class="links content3"></div>
+      <div class="rechts content3"></div>
+      <div class="unten content3"></div>
+    </div>
+    <div id="ring4">
+      <div class="oben content4"></div>
+      <div class="links content4"></div>
+      <div class="rechts content4"></div>
+      <div class="unten content4"></div>
+    </div>
+    <div id="ring5">
+      <div class="oben content5"></div>
+      <div class="links content5"></div>
+      <div class="rechts content5"></div>
+      <div class="unten content5"></div>
+    </div>
+    <div id="ring6">
+      <div class="oben content6"></div>
+      <div class="links content6"></div>
+      <div class="rechts content6"></div>
+      <div class="unten content6"></div>
+    </div>
+    <div id="ring7">
+      <div class="oben content7"></div>
+      <div class="links content7"></div>
+      <div class="rechts content7"></div>
+      <div class="unten content7"></div>
+    </div>
+    <div id="ring8">
+      <div class="oben content8"></div>
+      <div class="links content8"></div>
+      <div class="rechts content8"></div>
+      <div class="unten content8"></div>
+    </div>
+    <div id="ring9">
+      <div class="oben content9"></div>
+      <div class="links content9"></div>
+      <div class="rechts content9">;</div>
+      <div class="unten content9"></div>
+    </div>
+    <div id="ring10">
+      <div class="oben content10"></div>
+      <div class="links content10"></div>
+      <div class="rechts content10"></div>
+      <div class="unten content10"></div>
+    </div>
+  </div>
   <br />
   <div class="divlabel green">
     <span id="question1"></span><span class="green-mittelwert"></span>
@@ -72,6 +116,9 @@ width: 100%;display: flex;color: gray;">-</div></div>
 
   function platzierePunkte() {
     var zielscheibe = document.querySelector(".zielscheibe");
+    const altePunkte = zielscheibe.querySelectorAll(".punkt");
+    altePunkte.forEach(p => p.remove());
+
 
     // Iteriere über die Antworten
     for (var frage = 0; frage < antworten[0].length; frage++) {
@@ -174,14 +221,37 @@ width: 100%;display: flex;color: gray;">-</div></div>
   }
   var mittelwerte = berechneMittelwert();
   console.log(mittelwerte);
-// Zielscheibe beschriften
-for (let i = 1; i <= 10; i++) {
-  let ring = ringnumber - i + 1;
-  let contents = document.querySelectorAll(".content" + i);
-  contents.forEach((content) => {
-    content.textContent = ring;
-  });
-}
-  platzierePunkte();
+  // Zielscheibe beschriften
+  for (let i = 1; i <= 10; i++) {
+    let ring = ringnumber - i + 1;
+    let contents = document.querySelectorAll(".content" + i);
+    contents.forEach((content) => {
+      content.textContent = ring;
+    });
+  }
+
 </script>
 <br /><br />
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    platzierePunkte();
+  });
+
+  let letzteBreite = window.innerWidth;
+  let letzteHoehe = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    clearTimeout(window.neuPlatzierenTimeout);
+    window.neuPlatzierenTimeout = setTimeout(() => {
+      const neueBreite = window.innerWidth;
+      const neueHoehe = window.innerHeight;
+
+      if (neueBreite !== letzteBreite || neueHoehe !== letzteHoehe) {
+        letzteBreite = neueBreite;
+        letzteHoehe = neueHoehe;
+        platzierePunkte();
+      } a
+    }, 200);
+  });
+
+</script>
