@@ -14,28 +14,28 @@
 }
 
 .oben {
-position: absolute;
-top: 0;
-width: 100%;
-text-align: center;
-color: gray;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: gray;
 }
 
 .unten {
-position: absolute;
-bottom: 0;
-width: 100%;
-text-align: center;
-color: gray;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: gray;
 }
 
 .links {
-display: flex;
-position: absolute;
-left: 4px;
-align-items: center;
-height: 100%;
-color: gray;
+  display: flex;
+  position: absolute;
+  left: 4px;
+  align-items: center;
+  height: 100%;
+  color: gray;
 }
 
 .rechts {
@@ -44,12 +44,13 @@ color: gray;
   right: 4px;
   height: 100%;
   align-items: center;
-color: gray;
+  color: gray;
 }
 
 .zielscheibe * {
   box-sizing: unset;
 }
+
 .zielscheibe {
   position: relative;
   margin: 0 auto;
@@ -102,6 +103,7 @@ color: gray;
   50% {
     visibility: hidden;
   }
+
   100% {
     visibility: visible;
   }
